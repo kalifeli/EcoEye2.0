@@ -27,3 +27,4 @@ class ServerViewModel(): ViewModel() {
         _isServerRunning.value = !_isServerRunning.value
     }
 }
+
