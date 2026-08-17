@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
@@ -17,6 +18,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/io.netty.versions.properties"
+        }
     }
 
     buildTypes {
@@ -56,4 +64,7 @@ dependencies {
     //Ktor dependecies
     implementation("io.ktor:ktor-server-core:3.5.2")
     implementation("io.ktor:ktor-server-netty:3.5.2")
+    implementation("io.ktor:ktor-server-websockets:3.5.2")
+    //Serialization Kotlin Objects
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.5.2")
 }
