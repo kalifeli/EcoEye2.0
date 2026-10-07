@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "EcoEye App"
 include(":app")
- 
+include(":client-simulator")
